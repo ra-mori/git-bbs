@@ -24,7 +24,7 @@ public class CommentRepository {
 	@Autowired
 	NamedParameterJdbcTemplate template;
 
-	private static final RowMapper<Comment> COMMENT_ROW_MAPPER = new BeanPropertyRowMapper<>();
+	private static final RowMapper<Comment> COMMENT_ROW_MAPPER = new BeanPropertyRowMapper<>(Comment.class);
 
 	/**
 	 * 記事に付随するコメントを取得する.<br>
