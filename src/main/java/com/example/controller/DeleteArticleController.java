@@ -16,7 +16,7 @@ import com.example.repository.ArticleRepository;
  *
  */
 @Controller
-@RequestMapping("/bbs")
+@RequestMapping("/delete")
 public class DeleteArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
@@ -27,21 +27,11 @@ public class DeleteArticleController {
 	}
 
 	/**
-	 * トップページへフォワード.
-	 *
-	 * @param model リクエストスコープ
-	 * @return ビューへフォワード
-	 */
-	@RequestMapping("")
-	public String index(Model model) {
-		return "index";
-	}
-
-	/**
 	 * 記事を消去するメソッド.
 	 *
 	 * @return リダイレクト
 	 */
+	@RequestMapping("/")
 	public String deleteArticle(String id, Model model) {
 		int articleId = Integer.parseInt(id);
 		articleRepository.deleteById(articleId);

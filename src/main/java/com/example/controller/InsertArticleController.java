@@ -20,7 +20,7 @@ import com.example.repository.ArticleRepository;
  */
 @Transactional
 @Controller
-@RequestMapping("/bbs")
+@RequestMapping("/insert-article")
 public class InsertArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
@@ -30,23 +30,18 @@ public class InsertArticleController {
 		return new ArticleForm();
 	}
 
-	@RequestMapping("")
-	public String index(Model model) {
-		return "index";
-	}
-
 	/**
 	 * 記事を投稿する.
 	 *
 	 * @return 投稿記事をリダイレクト
 	 */
-	@RequestMapping("/add")
+	@RequestMapping("/")
 	public String addArticle(ArticleForm form, Model model) {
 
 		Article article = new Article();
 		BeanUtils.copyProperties(form, article);
 		articleRepository.insert(article);
 
-		return "redirect:/bbs";
+		return "redirect:/";
 	}
 }

@@ -19,6 +19,7 @@ import com.example.repository.CommentRepository;
  */
 @Controller
 @Transactional
+@RequestMapping("/insert-comment")
 public class InsertCommentController {
 	@Autowired
 	CommentRepository repository;
@@ -30,7 +31,7 @@ public class InsertCommentController {
 	 * @param model リクエストスコープ(一覧表示のメソッドを呼び出す用)
 	 * @return 記事とコメント一覧のビュー
 	 */
-	@RequestMapping("/insert-comment")
+	@RequestMapping("/")
 	public String insertComment(CommentForm form, Model model) {
 		ShowBbsController showBbsController = new ShowBbsController();
 		Comment comment = new Comment();
@@ -39,6 +40,6 @@ public class InsertCommentController {
 
 		repository.insert(comment);
 
-		return showBbsController.index(model);
+		return "redirect:/";
 	}
 }
