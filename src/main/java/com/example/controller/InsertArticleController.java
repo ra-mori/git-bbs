@@ -38,9 +38,9 @@ public class InsertArticleController {
 	/**
 	 * 記事を投稿する.
 	 *
-	 * @return 投稿記事をフォワード
+	 * @return 投稿記事をリダイレクト
 	 */
-	@RequestMapping("/add-article")
+	@RequestMapping("/add")
 	public String addArticle(ArticleForm form, Model model) {
 
 		Article article = new Article();
