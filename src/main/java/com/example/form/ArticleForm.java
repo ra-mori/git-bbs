@@ -1,7 +1,15 @@
 package com.example.form;
 
+/**
+ * 記事投稿のフォーム.
+ *
+ * @author shigeki.morishita
+ *
+ */
 public class ArticleForm {
+	/** name */
 	private String name;
+	/** コメント */
 	private String content;
 
 	public String getName() {
