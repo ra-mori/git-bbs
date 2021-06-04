@@ -7,7 +7,7 @@ package com.example.form;
  *
  */
 public class ArticleForm {
-	/** name */
+	/** 名前 */
 	private String name;
 	/** コメント */
 	private String content;

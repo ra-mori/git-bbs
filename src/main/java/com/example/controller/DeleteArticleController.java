@@ -30,7 +30,7 @@ public class DeleteArticleController {
 	 * トップページへフォワード.
 	 *
 	 * @param model リクエストスコープ
-	 * @return ビューへフォワード
+	 * @return フォワード
 	 */
 	@RequestMapping("")
 	public String index(Model model) {

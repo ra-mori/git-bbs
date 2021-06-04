@@ -30,6 +30,12 @@ public class InsertArticleController {
 		return new ArticleForm();
 	}
 
+	/**
+	 * title.
+	 *
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("")
 	public String index(Model model) {
 		return "index";
